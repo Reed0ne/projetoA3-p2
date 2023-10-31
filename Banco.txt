@@ -25,7 +25,7 @@ CREATE TABLE login (
 
 INSERT INTO usuario (nome, cpf, telefone)
 VALUES 
-('Administrador', '12345678900', '83912345678');
+('Administrador', '12345678900', '83912345678');loginlogin
 
 INSERT INTO nivel (descricao)
 VALUES
@@ -36,3 +36,13 @@ VALUES
 INSERT INTO login (cpf, login, senha, nivel)
 VALUES
 ('12345678900', 'admin', 'admin', 1);
+
+INSERT INTO usuario (nome, cpf, telefone)
+VALUES 
+('Gerente', '12345678990', '83912345679');
+
+INSERT INTO login (cpf, login, senha, nivel)
+VALUES
+('12345678990', 'gerente', 'gerente', 2);
+
+SELECT * FROM login
