@@ -8,7 +8,7 @@ $senha = isset($_POST['senha']) ? $_POST['senha'] : '';
 
 $senhaCriptgrafada = criptografar($senha);
 
-$select = "SELECT login, senha, nivel FROM login 
+$select = "SELECT login, senha, nivel, cpf FROM login 
 			WHERE login = '$login' AND senha = '$senhaCriptgrafada'";
 $query = mysqli_query($conexao, $select);
 $dados = mysqli_fetch_row($query);
@@ -17,6 +17,7 @@ if (isset($dados[0]) == $login && isset($dados[1]) == $senha) {
 	session_start();
 	$_SESSION['login'] = $dados[0];
 	$_SESSION['nivel'] = $dados[2];
+	$_SESSION['cpf'] = $dados[3];
 	$_SESSION['logado'] = true;
 	header('Location: principal.php');
 } else {
